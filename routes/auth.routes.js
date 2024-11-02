@@ -21,23 +21,23 @@ router.post(
       if (!errors.isEmpty()) {
         return res.status(400).json({
           errors: errors.array(),
-          message: 'Incorrent data',
+          message: 'Не правильний формат данних',
         });
       }
       const { email, password } = req.body;
       const candidate = await User.findOne({ email });
 
       if (candidate) {
-        return res.status(400).json({ message: 'User is already registered' });
+        return res.status(400).json({ message: 'Користувач вже зареєстрований' });
       }
 
       const hashedPassword = await bcrypt.hash(password, 12);
       const user = new User({ email, password: hashedPassword, isAdmin: false, phone: '', deliveryCity: '', deliveryAddress: '' });
       await user.save();
 
-      res.status(201).json({ message: 'User was created!' });
+      res.status(201).json({ message: 'Користувача створено!' });
     } catch (e) {
-      res.status(500).json({ message: 'Error, try again' });
+      res.status(500).json({ message: 'Помилка серверу' });
     }
   },
 );
@@ -45,7 +45,7 @@ router.post(
 router.post(
   '/login',
   [
-    check('email', 'Enter corrent email').normalizeEmail().isEmail(),
+    check('email', 'Не правильний формат пошти').normalizeEmail().isEmail(),
     check('password', 'Password doesnt exist').exists(),
   ],
   async (req, res) => {
@@ -55,24 +55,24 @@ router.post(
       if (!errors.isEmpty()) {
         return res.status(400).json({
           errors: errors.array(),
-          message: 'Incorrent data',
+          message: 'Данні не валідні',
         });
       }
       const { email, password } = req.body;
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(400).json({ message: 'User doesnt find' });
+        return res.status(400).json({ message: 'Користувач не існує' });
       }
 
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        return res.status(400).json({ message: 'Incorrect password, try again !' });
+        return res.status(400).json({ message: 'Пароль не правильний!' });
       }
       const token = jwt.sign({ userId: user.id }, config.get('jwtSecret'), { expiresIn: '1h' });
 
       res.json({ token, userId: user.id, isAdmin: user.isAdmin === 'true' });
     } catch (e) {
-      res.status(500).json({ message: 'Error, try again' });
+      res.status(500).json({ message: 'Помилка серверу' });
     }
   },
 );

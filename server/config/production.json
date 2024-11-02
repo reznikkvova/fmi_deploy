@@ -1,5 +1,0 @@
-{
-  "port": 5000,
-  "jwtSecret": "reznikkvova",
-  "mongoUri": "mongodb+srv://reznikkvova:Vovareznik2001@cluster0.cfzjz.mongodb.net/app?retryWrites=true&w=majority"
-}

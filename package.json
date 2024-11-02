@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js --ignore client",
-    "client": "npm run start --prefix client",
+    "client": "PORT=4000 npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client \""
   },
   "keywords": [
@@ -28,7 +28,9 @@
     "mongodb": "^3.6.9",
     "mongoose": "^5.12.11",
     "querystring": "^0.2.1",
+    "react-notifications": "^1.7.4",
     "react-select": "^5.7.3",
+    "react-toastify": "^8.0.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
     "url": "^0.11.0",
