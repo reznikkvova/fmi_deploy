@@ -55,14 +55,14 @@ export default function AuthPage() {
   const loginHandler = async () => {
     try {
       const data = await request('/api/auth/login', 'POST', { ...form });
-      console.log(data)
       if(data.message !== null) {
         NotificationManager.success(data.message);
       }
       auth.login(data.token, data.userId, data.isAdmin);
-      setTimeout(() => {
-        history.push('/');
-      }, 1000)
+      history.push('/');
+      /*setTimeout(() => {
+
+      }, 2000)*/
     } catch (e) {
 
     }

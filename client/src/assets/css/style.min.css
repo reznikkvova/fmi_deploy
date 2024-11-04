@@ -245,7 +245,7 @@ template {
 .header__link {
   padding: 0 25px;
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
@@ -297,7 +297,7 @@ template {
 .order-modal-title {
   margin-bottom: 48px;
   color: #303030;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 34px;
   font-weight: 400;
 }
@@ -334,7 +334,7 @@ template {
   margin: 0 0 20px;
 }
 .about__title h2 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
@@ -342,7 +342,7 @@ template {
   color: #303030;
 }
 .about__info {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -353,7 +353,7 @@ template {
   margin: 40px 0 10px;
 }
 .about__lists--title h3 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -369,7 +369,7 @@ template {
 .about__lists--list li {
   list-style: none;
   position: relative;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -402,7 +402,7 @@ template {
   margin-top: 80px;
 }
 .search input[type='text']::-webkit-input-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -410,7 +410,7 @@ template {
   color: #fff;
 }
 .search input[type='text']::-moz-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -418,7 +418,7 @@ template {
   color: #fff;
 }
 .search input[type='text']:-ms-input-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -426,7 +426,7 @@ template {
   color: #fff;
 }
 .search input[type='text']::-ms-input-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -434,7 +434,7 @@ template {
   color: #fff;
 }
 .search input[type='text']::placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -479,7 +479,7 @@ template {
 .search__form--title {
   margin: 30px 0 20px !important;
   padding: 0;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
@@ -515,7 +515,7 @@ template {
   height: 50px;
   background: #FF3600;
   border-radius: 5px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   font-size: 22px;
   line-height: 24px;
@@ -554,7 +554,7 @@ template {
 .breadcrumbs__body a,
 .breadcrumbs__body h2 {
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
@@ -569,7 +569,7 @@ template {
   color: #47443f;
 }
 .information__title h2 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 36px;
   line-height: 55px;
   text-align: center;
@@ -579,7 +579,7 @@ template {
 }
 .information__text p {
   margin: 0 30px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
@@ -602,7 +602,7 @@ template {
   align-items: center;
 }
 .blog__title h2 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 36px;
   line-height: 43px;
   text-align: center;
@@ -670,7 +670,7 @@ template {
 .blog__item--title {
   margin: 30px 30px 10px 30px;
   width: 326px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
@@ -679,7 +679,7 @@ template {
 .blog__item--info {
   margin: 0 30px;
   width: 326px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   font-size: 15px;
   line-height: 26px;
@@ -688,7 +688,7 @@ template {
 .blog__item--link {
   margin: 40px 0 40px 30px;
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -732,7 +732,7 @@ template {
 }
 .contact input[type='email']::-webkit-input-placeholder,
 .contact input[type='text']::-webkit-input-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -742,7 +742,7 @@ template {
 }
 .contact input[type='email']::-moz-placeholder,
 .contact input[type='text']::-moz-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -752,7 +752,7 @@ template {
 }
 .contact input[type='email']:-ms-input-placeholder,
 .contact input[type='text']:-ms-input-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -762,7 +762,7 @@ template {
 }
 .contact input[type='email']::-ms-input-placeholder,
 .contact input[type='text']::-ms-input-placeholder {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -773,7 +773,7 @@ template {
 .contact input[type='email']::placeholder,
 .contact input[type='text']::placeholder,
 .contact textarea::placeholder{
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -781,7 +781,7 @@ template {
   color: #47443f;
 }
 .contact__title h2 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -794,7 +794,7 @@ template {
   margin: 30px 0;
 }
 .contact__descr p {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -851,7 +851,7 @@ template {
   border-radius: 7px;
   font-size: 16px;
   color: #505050;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   outline: none;
 }
 .contact__form--input textarea {
@@ -871,7 +871,7 @@ template {
 }
 .contact__form--button button {
   cursor: pointer;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -894,7 +894,7 @@ template {
 }
 .contact__contacts span {
   margin-left: 10px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -905,7 +905,7 @@ template {
 .contact__contacts p {
   text-decoration: none;
   margin-left: 30px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -954,7 +954,7 @@ template {
   -webkit-box-pack: flex-start !important;
   -ms-flex-pack: flex-start !important;
   justify-content: flex- flex-start !important;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -970,7 +970,7 @@ template {
 }
 .filter__title h3 {
   margin: 0 0 30px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -979,7 +979,7 @@ template {
   color: #303030;
 }
 .filter__input--name {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -1156,7 +1156,7 @@ template {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 3px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -1175,7 +1175,7 @@ template {
 
 .carmodels--title {
   margin: 0 0 15px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -1185,7 +1185,7 @@ template {
 }
 .filters__slider--title {
   margin: 0 0 20px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1196,7 +1196,7 @@ template {
 #filters__slider--value-price p,
 #filters__slider--value-year p {
   margin: 25px 0 0;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -1209,7 +1209,7 @@ template {
 }
 .reset--button {
   margin: 20px 0;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   padding: 10px 40px;
@@ -1238,7 +1238,7 @@ template {
   width: 100%;
   background: #FF3600;
   border-radius: 7px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -1327,7 +1327,7 @@ template {
   text-decoration: none;
 }
 .items__title h2 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 36px;
   line-height: 55px;
   text-align: center;
@@ -1364,7 +1364,7 @@ template {
   margin: 10px 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -1373,7 +1373,7 @@ template {
 }
 .items__slider--price {
   width: 282px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
@@ -1516,7 +1516,7 @@ template {
   border-radius: 50%;
   margin-right: 10px;
   font-size: 34px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   color: #fff;
 }
@@ -1540,7 +1540,7 @@ template {
 .service__item--title {
   margin: 0 0 10px 0;
   padding: 0;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -1550,7 +1550,7 @@ template {
 .service__item--text {
   margin: 0;
   padding: 0;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1591,7 +1591,7 @@ template {
   align-items: center;
 }
 .item-list__filter p {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -1707,7 +1707,7 @@ template {
 .item-list__item--name {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 22px;
@@ -1716,7 +1716,7 @@ template {
   text-align: left;
 }
 .item-list__item--price {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 26px;
@@ -1728,7 +1728,7 @@ template {
   font-size: 18px;
 }
 .item-list__item--descr {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -1763,7 +1763,7 @@ template {
   position: absolute;
 }
 .cart__clear {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 26px;
   color: #303030;
   font-weight: 500;
@@ -1775,7 +1775,7 @@ template {
 .item-list-counter input {
   padding: 5px;
   border-radius: 3px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 18px;
   width: 60px;
   text-align: center;
@@ -1787,7 +1787,7 @@ template {
 }
 .item-list__item--button a {
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -1806,7 +1806,7 @@ template {
   padding: 10px 15px;
 }
 .item-list__item--article {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -1841,7 +1841,7 @@ template {
   cursor: pointer;
   margin: 0 20px;
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -1954,7 +1954,7 @@ input[type=number] {
   padding: 8px 0;
   margin: 0;
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -2011,7 +2011,7 @@ li.li--active {
   border-radius: 3px;
 }
 .item-list__filter--filter--mobile p {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -2106,7 +2106,7 @@ li.li--active {
 }
 .footer__link {
   text-decoration: none;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -2961,7 +2961,7 @@ li.li--active {
   border-radius: 15px;
   margin: 10px 0;
   font-size: 18px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   color: #303030;
   font-weight: 500;
 }
@@ -3008,7 +3008,7 @@ li.li--active {
   min-height: 46px;
 }
 .item-list_count {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -3194,13 +3194,13 @@ li.li--active {
 .offset-s3.auth-wrapper h1 {
   font-size: 50px;
   font-weight: 600;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: bold;
   padding: 10px;
 }
 
 .auth-wrapper span {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 24px;
   margin-bottom: 16px;
   color: white;
@@ -3228,7 +3228,7 @@ li.li--active {
 
 .card-content > div input {
   width: 100%;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   margin: 10px 0;
 }
 
@@ -3253,7 +3253,7 @@ li.li--active {
   background-color: #FF3600;
   border-radius: 10px;
   font-weight: 600;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   color: #fff;
   cursor: pointer;
 }
@@ -3314,7 +3314,7 @@ li.li--active {
 
 }
 .auth-tab-wrapper .tab {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
@@ -3322,7 +3322,7 @@ li.li--active {
   width: 50%;
   display: flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 8px 12px;
   justify-content: center;
   border-radius: 8px 8px 0 0;
   cursor: pointer;
@@ -3351,7 +3351,7 @@ li.li--active {
   background-color: #FF3600;
   border-radius: 10px;
   font-weight: 600;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   color: #fff;
   cursor: pointer;
 

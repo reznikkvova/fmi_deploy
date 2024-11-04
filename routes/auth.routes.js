@@ -24,7 +24,7 @@ router.post(
           message: 'Не правильний формат данних',
         });
       }
-      const { email, password } = req.body;
+      const { email, password, name } = req.body;
       const candidate = await User.findOne({ email });
 
       if (candidate) {
@@ -32,7 +32,7 @@ router.post(
       }
 
       const hashedPassword = await bcrypt.hash(password, 12);
-      const user = new User({ email, password: hashedPassword, isAdmin: false, phone: '', deliveryCity: '', deliveryAddress: '' });
+      const user = new User({ email, password: hashedPassword, name: name, isAdmin: false, phone: '', deliveryCity: '', deliveryAddress: '' });
       await user.save();
 
       res.status(201).json({ message: 'Користувача створено!' });
@@ -70,7 +70,7 @@ router.post(
       }
       const token = jwt.sign({ userId: user.id }, config.get('jwtSecret'), { expiresIn: '1h' });
 
-      res.json({ token, userId: user.id, isAdmin: user.isAdmin === 'true' });
+      res.json({ token, userId: user.id, isAdmin: user.isAdmin === 'true', message: 'Авторизація успішна' });
     } catch (e) {
       res.status(500).json({ message: 'Помилка серверу' });
     }
