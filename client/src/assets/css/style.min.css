@@ -522,6 +522,11 @@ template {
   text-transform: uppercase;
   color: #fff;
   margin: 0 0 30px;
+  transition: ease-in-out .2s;
+}
+.search__form--button:hover, .search--button:hover {
+  transition: ease-in-out .2s;
+  background: #8f1e00;
 }
 .breadcrumbs {
   position: fixed;
@@ -1077,12 +1082,12 @@ template {
 }
 .custom-checkbox:not(:disabled):not(:checked) + label:hover::before,
 .custom-radio:not(:disabled):not(:checked) + label:hover::before {
-  border-color: #fcef3a;
+  border-color: #8f1e00;
 }
 .custom-checkbox:not(:disabled):active + label::before,
 .custom-radio:not(:disabled):active + label::before {
-  background-color: #fcef3a;
-  border-color: #fcef3a;
+  background-color: #8f1e00;
+  border-color: #8f1e00;
 }
 .custom-checkbox:focus:not(:checked) + label::before,
 .custom-radio:focus:not(:checked) + label::before {
@@ -1090,8 +1095,8 @@ template {
 }
 .custom-checkbox:checked + label::before,
 .custom-radio:checked + label::before {
-  border-color: #fcef3a;
-  background-color: #fcef3a;
+  border-color: #8f1e00;
+  background-color: #8f1e00;
 }
 .custom-radio:checked + label::before {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
@@ -1315,7 +1320,7 @@ template {
   transition: 0.5s;
 }
 .filtermobile.active {
-  border: 2px solid #fcef3a;
+  border: 2px solid #8f1e00;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -1966,7 +1971,7 @@ li.li--active {
   color: #FF3600;
 }
 .item-list__sort-by li:hover {
-  color: #fcef3a;
+  color: #8f1e00;
 }
 .item-list__sort-by a:nth-child(2) {
   margin: 15px 0;
@@ -2113,7 +2118,7 @@ li.li--active {
   color: #a6a6a6;
 }
 .footer__link:hover {
-  border-bottom: 3px solid #fcef3a;
+  border-bottom: 3px solid #8f1e00;
 }
 .footer__social {
   display: -webkit-box;
@@ -2223,7 +2228,7 @@ li.li--active {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background-color: #fcef3a;
+  background-color: #8f1e00;
 }
 .noUi-state-tap .noUi-connect,
 .noUi-state-tap .noUi-origin {
@@ -2272,7 +2277,7 @@ li.li--active {
   border-radius: 3px;
 }
 .noUi-connect {
-  background: #fcef3a;
+  background: #8f1e00;
 }
 .noUi-draggable {
   cursor: ew-resize;

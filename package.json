@@ -8,7 +8,8 @@
     "start": "node index.js",
     "server": "nodemon index.js --ignore client",
     "client": "PORT=4000 npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client \""
+    "dev": "concurrently \"npm run server\" \"npm run client \"",
+    "register:super-admin": "node createSuperAdmin.js --email=%npm_config_email% --password=%npm_config_password%"
   },
   "keywords": [
     "react",
