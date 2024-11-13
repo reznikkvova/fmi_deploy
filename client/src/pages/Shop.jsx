@@ -4,6 +4,7 @@ import ItemBlock from './../components/itemBlock/index';
 import Axios from "axios";
 import {useAuth} from "../hooks/auth.hook";
 import {useHistory} from "react-router-dom";
+import loadingSpinner from '../assets/img/loading-spinner.svg'
 
 export default function Shop({handleRequest, params, handleSetParams, searchFromHome, handleSetSearchFromHome}) {
 
@@ -44,8 +45,6 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
 
   useEffect(() => {
     if(loading) {
-      setLoading(false);
-
       const filteredObj = Object.entries(searchParams).reduce((acc, [key, value]) => {
         if (value !== '') {
           acc[key] = value;
@@ -65,7 +64,9 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
       }).then((response) => {
         setItems(response.data);
         setItemsCount(response.data.count);
-
+        setTimeout(() => {
+          setLoading(false);
+        }, 300)
       });
       if(searchFromHome) {
         handleSetSearchFromHome(false);
@@ -135,7 +136,7 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
         <div className="container">
           <div className="items-selling__body">
             <Filter visibleFilter={visibleFilter}  handleSetSearchParams={handleSetSearchParams} searchParams={searchParams}/>
-            <div className="item-list__body">
+            {!loading ? <div className="item-list__body">
               <div className="item-list__filter">
                 <div className="item-list__filter--show">
                   <p>Список товарів - {itemsCount}</p>
@@ -153,7 +154,7 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
               </div>
 
               <div className="item-list__wrapper fd-col">
-                {items && items.data &&
+                {!loading && items && items.data &&
                   // eslint-disable-next-line
                   items.data.map((obj) =>
                         <ItemBlock inCart={itemsCart.some(item => item.productId == obj.id)} key={obj.id} {...obj} handleAddItemToCart={handleAddItemToCart} />
@@ -161,11 +162,12 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
               </div>
 
               <div className="item-list__pagination">
-                {Array(Math.ceil(itemsCount/itemsPerPage)).fill(1).map((el, i) =>
+                {Math.ceil(itemsCount/itemsPerPage) > 1 && Array(Math.ceil(itemsCount/itemsPerPage)).fill(1).map((el, i) =>
                     <div className={page === i ? 'active--pagination' : ''} onClick={() => handleChangePage(i)}>{i+1}</div>
                 )}
               </div>
-            </div>
+            </div> :
+                <img src={loadingSpinner} alt="loading" className='search-page-loading-spinner' />}
           </div>
         </div>
       </section>

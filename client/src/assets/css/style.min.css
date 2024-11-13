@@ -3370,3 +3370,20 @@ li.li--active {
 .auth-tab-content .card-content > div .input-field {
   width: 100%;
 }
+
+.search-page-loading-spinner {
+  margin: auto;
+}
+
+.content {
+  min-height: calc(100vh - 80px - 170px - 23px);
+}
+
+.card-page-spinner-wrapper {
+  margin: 100px 0 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 80px - 170px - 23px);
+  justify-content: center;
+}
