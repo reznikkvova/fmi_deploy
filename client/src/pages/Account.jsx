@@ -7,7 +7,7 @@ import Axios from "axios";
 import clsx from "clsx";
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
-export default function Account({handleRequest}) {
+export default function Account({handleRequest, handleUserLogout}) {
 
     const auth = useContext(AuthContext);
     const history = useHistory();
@@ -24,7 +24,7 @@ export default function Account({handleRequest}) {
     const handleLogout = () => {
         auth.logout();
         history.push('/login');
-        handleRequest();
+        handleUserLogout();
     };
 
     const onLoadUserInfo = () => {

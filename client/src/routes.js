@@ -39,6 +39,10 @@ export const useRoutes = (isAuthenticated, isAdmin, userId) => {
       });
     }
 
+    const handleUserLogout = () => {
+        setItemInCart(0);
+    }
+
     useEffect(() => {
       if(userId !== null) {
         handleRequest();
@@ -65,13 +69,13 @@ export const useRoutes = (isAuthenticated, isAdmin, userId) => {
               <Contact />
             </Route>
             <Route exact path="/cart">
-              <Cart handleRequest={handleRequest}/>
+                {!isAuthenticated ? <Redirect to="/login" /> : <Cart handleRequest={handleRequest}/> }
             </Route>
               <Route exact path='/account'>
-                  {!isAuthenticated ? <Redirect to="/login" /> : <Account handleRequest={handleRequest}/> }
+                  {!isAuthenticated ? <Redirect to="/login" /> : <Account handleRequest={handleRequest} handleUserLogout={handleUserLogout}/> }
               </Route>
               <Route exact path='/login'>
-                  {isAuthenticated ? <Redirect to="/account" /> : <AuthPage/> }
+                  {isAuthenticated ? <Redirect to="/account" /> : <AuthPage handleRequest={handleRequest}/> }
               </Route>
             <Route exact path='/admin'>
              {/*{isAdmin ? <AdminPanel/> : <Redirect to="/"/> }*/}

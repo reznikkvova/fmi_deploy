@@ -5,6 +5,7 @@ import Axios from "axios";
 import {useAuth} from "../hooks/auth.hook";
 import {useHistory} from "react-router-dom";
 import loadingSpinner from '../assets/img/loading-spinner.svg'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 export default function Shop({handleRequest, params, handleSetParams, searchFromHome, handleSetSearchFromHome}) {
 
@@ -109,12 +110,8 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
       }).then((response) => {
         handleRequest();
       });
-
-
     } else {
-      if(window.confirm('Додавання товарів в корзину доступно лише після авторизації. Бажаєте авторизуватись?')) {
-        history.push('/login')
-      }
+      NotificationManager.warning('Додавання товарів в корзину доступно лише після авторизації.')
     }
   };
 
@@ -130,6 +127,7 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
 
   return (
     <main>
+      <NotificationContainer/>
       {visibleFilter ? <div className="filter__body-overlay" onClick={(e) => handleCloseVisibleFilter(e)}></div> : ''}
       <BreadCrumbs crumbs={[{ route: '/tires', label: 'Пошук шин'}]}/>
       <section className="items-selling">
@@ -157,7 +155,7 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
                 {!loading && items && items.data &&
                   // eslint-disable-next-line
                   items.data.map((obj) =>
-                        <ItemBlock inCart={itemsCart.some(item => item.productId == obj.id)} key={obj.id} {...obj} handleAddItemToCart={handleAddItemToCart} />
+                        <ItemBlock token={token} inCart={itemsCart.some(item => item.productId == obj.id)} key={obj.id} {...obj} handleAddItemToCart={handleAddItemToCart} />
                       )}
               </div>
 

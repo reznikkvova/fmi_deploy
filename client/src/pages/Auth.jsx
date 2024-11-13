@@ -12,7 +12,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 
 
-export default function AuthPage() {
+export default function AuthPage({handleRequest}) {
   const history = useHistory();
   const auth = useContext(AuthContext);
   const { loading, request, error, clearError } = useHttp();
@@ -59,6 +59,7 @@ export default function AuthPage() {
         NotificationManager.success(data.message);
       }
       auth.login(data.token, data.userId, data.isAdmin);
+      handleRequest();
       history.push('/');
       /*setTimeout(() => {
 

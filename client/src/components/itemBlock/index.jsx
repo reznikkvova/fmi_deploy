@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 function ItemBlock({
-     id, inCart, brand, diameter, width, height, construction, speedIndex, countAvailable, season, image, year, price, article, handleAddItemToCart,
+     id, inCart, brand, diameter, width, height, construction, speedIndex, countAvailable, season, image, year, price, article, handleAddItemToCart, token
 }) {
   const [cartStatus, setCartStatus] = useState(false);
   const [dollar, setDollar] = useState(36);
@@ -18,7 +18,7 @@ function ItemBlock({
   }, []);
 
   const handleAdd = (id, quantity, price) => {
-    setItemInCart(true);
+    if(!!token) setItemInCart(true);
     handleAddItemToCart(id, quantity, price);
   }
 

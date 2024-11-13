@@ -28,25 +28,26 @@ router.post('/add', async (req, res) => {
 })
 
 router.get('/get-items', async (req, res) => {
-    try{
+    try {
         const userId = req.query.userId;
+        const cart = await Cart.findOne({ userId });
 
-        const cart = await Cart.findOne({userId});
-        if(cart) {
-
-            const items = await Tire.find({'id': {
-                    "$in": cart.products.map(product => product.productId)
-                }})
+        if (cart) {
+            const items = await Tire.find({
+                'id': { "$in": cart.products.map(product => product.productId) }
+            });
 
             return res.status(200).json({
                 success: true,
                 cart: cart,
                 items: items
             });
+        } else {
+            return res.status(404).json({ success: false, message: 'Cart not found' });
         }
-    } catch(err) {
+    } catch (err) {
         console.log(err);
-        res.status(500).json({ error: 'server error' });
+        res.status(500).json({ error: 'Server error' });
     }
 });
 
