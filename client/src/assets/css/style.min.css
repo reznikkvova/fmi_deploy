@@ -1666,12 +1666,19 @@ template {
   display: -ms-flexbox;
   display: flex;
 }
-.item-list__item--img img {
+.item-list__item--img {
   width: 210px;
+  min-width: 210px;
   height: 165px;
+  text-align: center;
 }
+.item-list__item--img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 @media (max-width: 510px) {
-  .item-list__item--img img {
+  .item-list__item--img {
     width: 100px;
     height: 65px;
   }

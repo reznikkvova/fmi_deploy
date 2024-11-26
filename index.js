@@ -6,26 +6,19 @@ const app = express();
 const path = require('path');
 
 const cors = require('cors');
+
+
 app.use(cors());
-
-
 app.use(express.json({ extended: true }));
 app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/cart', require('./routes/cart.router'))
 app.use('/api/tire-crud', require('./routes/tire-crud.router'))
 app.use('/api/brand-crud', require('./routes/brand-crud.router'))
 app.use('/api/user-crud', require('./routes/user-crud.router'))
-
-
-
-const prod = true;
-
-if (prod) {
-  app.use(express.static(path.join(__dirname, './client/build')));
-  app.get('*', (req, res) => {
-     res.json("Hello");
-  });
-}
+app.use(express.static(path.join(__dirname, './client/build')));
+app.get('*', (req, res) => {
+   res.json("STATUS 200");
+});
 
 
 async function start() {

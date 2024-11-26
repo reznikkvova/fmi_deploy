@@ -147,7 +147,7 @@ export default function Account({handleRequest, handleUserLogout}) {
                     <div className="admin-menu-button admin-create-button" onClick={() => handleSaveNewPassword()}> Зберегти зміни </div>
                 </> : ''
                 }
-                {activeTab === 2 ? '2' : ''}
+                {activeTab === 2 ? '' : ''}
                 </div>
 
                 <div className="admin-menu-button admin-create-button" onClick={() => handleLogout()}> Вийти з акаунту </div>

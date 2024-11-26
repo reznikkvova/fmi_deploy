@@ -12,10 +12,10 @@ router.post('/create', async (req, res) => {
     try {
 
         if (await Brand.findOne({ name })) {
-            return res.status(400).json({ message: 'Brand is already registered' });
+            return res.status(400).json({ message: 'Виробник вже існує' });
         }
         await item.save();
-        return res.status(201).json({ message: 'Brand was created!' });
+        return res.status(201).json({ message: 'Виробника було створено!' });
     } catch (e) {
         console.log(e);
     }
@@ -32,7 +32,7 @@ router.get('/get-items', async (req, res) => {
         });
     } catch(err) {
         console.log(err);
-        res.status(500).json({ error: 'server error' });
+        res.status(500).json({ error: 'Помилка отримання даних' });
     }
 })
 

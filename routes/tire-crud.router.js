@@ -19,12 +19,13 @@ router.post('/create', async (req, res) => {
     try {
 
         if (await Tire.findOne({ article })) {
-            return res.status(400).json({ message: 'Item is already registered' });
+            return res.status(400).json({ message: 'Товар вже існує!' });
         }
         await item.save();
-        return res.status(201).json({ message: 'Item was created!' });
+        return res.status(201).json({ message: 'Товар було створено!' });
     } catch (e) {
         console.log(e);
+        res.status(500).json({ message: 'Помилка сервера' });
     }
 })
 router.get('/get-items', async (req, res) => {
@@ -40,7 +41,7 @@ router.get('/get-items', async (req, res) => {
         });
     } catch(err) {
         console.log(err);
-        res.status(500).json({ error: 'server error' });
+        res.status(500).json({ message: 'Помилка сервера' });
     }
 });
 
@@ -69,7 +70,7 @@ router.get('/get-items-sorting', async (req, res) => {
         });
     } catch(err) {
         console.log(err);
-        res.status(500).json({ error: 'server error' });
+        res.status(500).json({ message: 'Помилка сервера' });
     }
 });
 
@@ -83,7 +84,7 @@ router.get('/get/:id', async (req, res) => {
         });
     } catch(err) {
         console.log(err);
-        res.status(500).json({ error: 'server error' });
+        res.status(500).json({ message: 'Помилка сервера' });
     }
 });
 
@@ -93,10 +94,10 @@ router.put('/update/:id', async (req, res) => {
             $set: req.body
         });
 
-        res.status(200).json({ message: 'The item was successfully updated' });
+        res.status(200).json({ message: 'Товар було успішно оновлено' });
     } catch(err) {
         console.log(err);
-        res.status(500).json({ error: 'server error' });
+        res.status(500).json({ message: 'Помилка сервера' });
     }
 });
 
@@ -105,10 +106,10 @@ router.delete('/delete/:id', async (req, res) => {
 
         const item = await Tire.findByIdAndRemove(req.params.id);
 
-        return res.status(201).json({ message: 'Item was deleted!' });
+        return res.status(201).json({ message: 'Товар було видалено!' });
     } catch(err) {
         console.log(err);
-        res.status(500).json({ error: 'server error' });
+        res.status(500).json({ message: 'Помилка сервера' });
     }
 })
 

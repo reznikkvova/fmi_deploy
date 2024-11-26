@@ -12,22 +12,27 @@ import Account from "./pages/Account";
 import AdminPanel from "./pages/Admin/AdminPanel";
 import AdminUpdateTire from "./pages/Admin/AdminUpdateTire";
 import Axios from "axios";
-import {bool} from "prop-types";
-import {useHistory} from "react-router-dom";
 
 export const useRoutes = (isAuthenticated, isAdmin, userId) => {
+
     const [itemsInCart, setItemInCart] = useState(0);
     const [params, setParams] = useState({});
     const [searchFromHome, setSearchFromHome] = useState(false);
 
-
     const handleSetParams = (par) => {
         setParams(par);
     }
-
     const handleSetSearchFromHome = (bool) => {
         setSearchFromHome(bool);
     }
+    const handleUserLogout = () => {
+        setItemInCart(0);
+    }
+    useEffect(() => {
+        if(userId !== null) {
+            handleRequest();
+        }
+    }, [userId])
 
     const handleRequest = () => {
       Axios.get('/api/cart/get-items-count', {
@@ -39,20 +44,10 @@ export const useRoutes = (isAuthenticated, isAdmin, userId) => {
       });
     }
 
-    const handleUserLogout = () => {
-        setItemInCart(0);
-    }
-
-    useEffect(() => {
-      if(userId !== null) {
-        handleRequest();
-      }
-    }, [userId])
     return (
       <Switch>
         <>
             <div className="loading">
-
             </div>
           <Header isAdmin={isAdmin} itemsInCart={itemsInCart}/>
           <div className="content">
@@ -71,9 +66,16 @@ export const useRoutes = (isAuthenticated, isAdmin, userId) => {
             <Route exact path="/cart">
                 {!isAuthenticated ? <Redirect to="/login" /> : <Cart handleRequest={handleRequest}/> }
             </Route>
+
               <Route exact path='/account'>
-                  {!isAuthenticated ? <Redirect to="/login" /> : <Account handleRequest={handleRequest} handleUserLogout={handleUserLogout}/> }
+                  {!isAuthenticated ?
+                      <Redirect to="/login" />
+                      :
+                      <Account handleRequest={handleRequest}
+                               handleUserLogout={handleUserLogout}/> }
               </Route>
+
+
               <Route exact path='/login'>
                   {isAuthenticated ? <Redirect to="/account" /> : <AuthPage handleRequest={handleRequest}/> }
               </Route>

@@ -24,7 +24,13 @@ const Filter = React.memo(({ visibleFilter, handleSetSearchParams, searchParams 
       season: '',
       brand: ''
     });
-    handleSetSearchParams(form);
+    handleSetSearchParams({
+      diameter: '',
+      height: '',
+      width: '',
+      season: '',
+      brand: ''
+    });
   };
 
   const changeHandler = (event) => {

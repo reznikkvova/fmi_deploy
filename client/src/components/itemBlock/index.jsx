@@ -48,9 +48,11 @@ function ItemBlock({
               :
               ''
           }
-          {itemInCart ? <div className="item-list__item--button cursor in_cart">
-            <span>В кошику</span>
-          </div> : ''}
+        {itemInCart ?
+            <div className="item-list__item--button cursor in_cart">
+              <span>В кошику</span>
+            </div> :
+            ''}
         </div>
         {!itemInCart && countAvailable > 0 ?
             <div onClick={() => handleAdd(id, 1, price)} className="item-list__item--button cursor">

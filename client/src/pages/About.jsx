@@ -6,7 +6,11 @@ export default function About() {
 
   return (
     <main>
-      <BreadCrumbs crumbs={[{route: '/about-us', label: 'Про нас'}]}/>
+
+      <BreadCrumbs crumbs={[{route: '/about-us',
+        label: 'Про нас'}]}/>
+
+
       <section className="about">
         <div className="container">
           <div className="about__body">

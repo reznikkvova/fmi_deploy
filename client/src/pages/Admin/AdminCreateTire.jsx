@@ -5,6 +5,7 @@ import noImage from '../../assets/img/no_img.jpg'
 import Select from 'react-select'
 
 import {diameter, width, height, season, speedIndex, construction} from '../../variables';
+import {NotificationContainer, NotificationManager} from "react-notifications";
 
 export default function AdminCreateTire() {
 
@@ -61,9 +62,9 @@ export default function AdminCreateTire() {
 
     const onAddTire =  () => {
         Axios.post('/api/tire-crud/create',{...form}).then((response) => {
-            alert(response.data.message);
+            NotificationManager.success(response.data.message);
         }, (error) => {
-            alert(error.data.message);
+            NotificationManager.error(error.data.message);
         });
         onResetForm();
     }
@@ -90,6 +91,7 @@ export default function AdminCreateTire() {
 
     return (
         <div className="admin-menu admin-create">
+            <NotificationContainer/>
             <h1 className='admin-menu-title'>Додати новий товар</h1>
 
             <div className="admin-menu-form admin-create-form">

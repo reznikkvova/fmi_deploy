@@ -6,11 +6,12 @@ import { useAuth } from './hooks/auth.hook';
 import { AuthContext } from './context/AuthContext';
 
 function App() {
+    // Ініціалізація змінних
   const { token, login, logout, userId, isAdmin } = useAuth();
   const isAuthenticated = !!token;
   const routes = useRoutes(isAuthenticated, Boolean(isAdmin), userId);
-
   return (
+      // Ініціалізація провайдеру авторизації
     <AuthContext.Provider
       value={{
         token,
@@ -20,6 +21,7 @@ function App() {
         isAuthenticated,
         isAdmin: Boolean(isAdmin)
       }}>
+         {/*Ініціалізація роутів, імпортованих з іншого файлу*/}
       {routes}
     </AuthContext.Provider>
   );

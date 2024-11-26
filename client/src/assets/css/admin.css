@@ -19,6 +19,7 @@
 }
 
 .admin-tab {
+    white-space: nowrap;
     margin: 0 25px;
     border: 2px solid #FF3600;
     border-radius: 5px;
@@ -227,4 +228,8 @@
 
 .account-page-tab-content .admin-menu-button {
     margin: 12px 0 0;
+}
+
+.css-1dimb5e-singleValue {
+    margin-top: 13px;
 }

@@ -10,13 +10,13 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 export default function Shop({handleRequest, params, handleSetParams, searchFromHome, handleSetSearchFromHome}) {
 
   const history = useHistory();
-  const itemsPerPage = 2;
+  const itemsPerPage = 4;
 
   const sortItems = [
     {id: '1', name: 'Найновіші', type: 'year', order: 'desc' },
     {id: '2', name: 'Найстаріші', type: 'year', order: 'asc' },
-    {id: '3', name: 'Найдешевші', type: 'price', order: 'desc' },
-    {id: '4', name: 'Найдорожчі', type: 'price', order: 'asc' }
+    {id: '3', name: 'Найдешевші', type: 'price', order: 'asc' },
+    {id: '4', name: 'Найдорожчі', type: 'price', order: 'desc' }
   ];
 
   const [visibleFilter, setVisibleFilter] = useState(false);
@@ -77,12 +77,7 @@ export default function Shop({handleRequest, params, handleSetParams, searchFrom
     }
   }, [selectedSort, page, searchParams]);
 
-  useEffect(() => {
-    Axios.get('/api/tire-crud/get-items', ).then((response) => {
-      setItemsCount(response.data.count);
-    });
 
-  }, [])
 
   useEffect(() => {
     if(userId !== null) {

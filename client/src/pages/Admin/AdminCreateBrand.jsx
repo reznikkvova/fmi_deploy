@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Axios from 'axios';
 
 import noImage from '../../assets/img/no_img.jpg'
+import {NotificationContainer, NotificationManager} from "react-notifications";
 
 export default function AdminCreateBrand() {
 
@@ -25,12 +26,17 @@ export default function AdminCreateBrand() {
     };
 
     const onAddBrand =  () => {
-        Axios.post('/api/brand-crud/create',{...form});
+        Axios.post('/api/brand-crud/create',{...form}).then((response) => {
+            NotificationManager.success(response.data.message);
+        }, (error) => {
+            NotificationManager.error('Виробника вже створено');
+        });
         onResetForm();
     }
 
     return (
         <div className="admin-menu admin-create">
+            <NotificationContainer/>
             <h1 className='admin-menu-title'>Додати нового виробника</h1>
             <div className="admin-menu-form admin-create-form">
                 <label htmlFor="name" className='admin-menu-label'>

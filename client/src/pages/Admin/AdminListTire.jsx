@@ -6,6 +6,7 @@ import noImage from '../../assets/img/no_img.jpg'
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import clsx from "clsx";
+import {NotificationContainer, NotificationManager} from "react-notifications";
 
 
 export default function AdminListTire() {
@@ -30,7 +31,11 @@ export default function AdminListTire() {
 
     const onDeleteItem = (id) => {
             if(window.confirm('Ви впевнені, що хочете видалити товар?')) {
-                Axios.delete(`/api/tire-crud/delete/${id}`);
+                Axios.delete(`/api/tire-crud/delete/${id}`).then((response) => {
+                    NotificationManager.success(response.data.message);
+                }, (error) => {
+                    NotificationManager.error(error.data.message);
+                });
                 setUpdate(true);
             }
     }
@@ -57,6 +62,7 @@ export default function AdminListTire() {
 
     return (
         <div className="admin-menu admin-create">
+            <NotificationContainer/>
             <h1 className='admin-menu-title'>Список товарів ({items.count})</h1>
             <input type="text" placeholder='Пошук' className='admin-search-list' onChange={handleChange}/>
             {items && items.count > 0 ?

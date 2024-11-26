@@ -1,12 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React  from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import {Link, useHistory} from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
 import breadCrumbsPng from '../../assets/img/bread-crumbs.png';
 
 export default function BreadCrumbs({crumbs}) {
-
   return (
     <section className="breadcrumbs">
       <div className="container">

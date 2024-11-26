@@ -7,6 +7,7 @@ import Select from 'react-select'
 import {diameter, width, height, season, speedIndex, construction} from '../../variables';
 import {useParams} from "react-router-dom";
 import { useHistory } from 'react-router-dom';
+import {NotificationContainer, NotificationManager} from "react-notifications";
 
 export default function AdminUpdateTire() {
 
@@ -49,10 +50,10 @@ export default function AdminUpdateTire() {
 
     const onUpdateTire =  () => {
         Axios.put(`/api/tire-crud/update/${id}`,{...form}).then((response) => {
-            alert(response.data.message);
+            NotificationManager.success(response.data.message);
             history.push('/admin');
         }, (error) => {
-            alert(error.data.message);
+            NotificationManager.error(error.data.message);
         });
     }
 
@@ -95,6 +96,7 @@ export default function AdminUpdateTire() {
 
     return (
         <main className="admin-panel">
+        <NotificationContainer/>
         <div className="admin-menu admin-create">
             <h1 className='admin-menu-title'>Додати новий товар</h1>
 
